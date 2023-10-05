@@ -8,7 +8,8 @@
   align-items: center;
 
   &__logo {
-    color: v.$color-btn-hover;
+    font-family: v.$secundary-font;
+    color: v.$clr-red;
     font-style: italic;
     font-size: 3.5rem;
     font-weight: 900;

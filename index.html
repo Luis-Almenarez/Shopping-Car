@@ -19,7 +19,7 @@
         </nav>
       </header>
       <main>
-        <div class="breadcrumbs">
+        <section class="breadcrumbs">
           <a href="/" class="breadcrumbs__link">Home</a>
           <div class="breadcrumbs__separador">
             <i class="bi bi-chevron-right breadcrumbs__icon"></i>
@@ -29,7 +29,102 @@
             <i class="bi bi-chevron-right breadcrumbs__icon"></i>
           </div>
           <p href="/" class="breadcrumbs__active">Sony Wireless</p>
-        </div>
+        </section>
+
+        <section class="producto" id="producto" data-producto-id="1">
+          <div class="producto__thumbs">
+            <img src="./img/thumbs/black.jpg" alt="" class="producto__thumb-img" />
+            <img src="./img/thumbs/1.jpg" alt="" class="producto__thumb-img" />
+            <img src="./img/thumbs/2.jpg" alt="" class="producto__thumb-img" />
+            <img src="./img/thumbs/3.jpg" alt="" class="producto__thumb-img" />
+            <img src="./img/thumbs/4.jpg" alt="" class="producto__thumb-img" />
+          </div>
+          <div class="producto__contenedor-imagen">
+            <img src="./img/products/black.jpg" alt="" class="producto__imagen" />
+          </div>
+          <div class="producto__contenedor-info">
+            <div class="producto__estrellas">
+              <div class="producto__estrella">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="producto__estrella">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="producto__estrella">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="producto__estrella">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <div class="producto__estrella">
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+            <h1 class="producto__nombre">Sony Wireless WH-H910N.</h1>
+            <p class="producto__descripcion">Exceptional sound quality with a specially designed 30mm diaphragm unit.</p>
+            <div class="producto__contenedor-propiedad">
+              <p class="producto__propiedad">Price</p>
+              <p class="producto__precio">$249.99</p>
+            </div>
+            <div class="producto__contenedor-propiedad" id="propiedad-color">
+              <p class="producto__propiedad">Color</p>
+              <div class="producto__contenedor-radios">
+                <label for="black">
+                  <input type="radio" class="producto__radio-input" name="color" id="black" value="black" checked />
+                  <p class="producto__radio-texto producto__radio-texto--color producto__radio-texto--black">Black</p>
+                </label>
+                <label for="red">
+                  <input type="radio" class="producto__radio-input" name="color" id="red" value="red" />
+                  <p class="producto__radio-texto producto__radio-texto--color producto__radio-texto--red">Red</p>
+                </label>
+                <label for="blue">
+                  <input type="radio" class="producto__radio-input" name="color" id="blue" value="blue" />
+                  <p class="producto__radio-texto producto__radio-texto--color producto__radio-texto--blue">Blue</p>
+                </label>
+              </div>
+            </div>
+            <div class="producto__contenedor-propiedad" id="propiedad-tamaño">
+              <p class="producto__propiedad">Size</p>
+              <div class="producto__contenedor-radios">
+                <label for="1,5">
+                  <input type="radio" class="producto__radio-input" name="tamaño" id="1,5" value="1,5" checked />
+                  <p class="producto__radio-texto">1,5</p>
+                </label>
+                <label for="2">
+                  <input type="radio" class="producto__radio-input" name="tamaño" id="2" value="2" />
+                  <p class="producto__radio-texto">2</p>
+                </label>
+                <label for="2,5">
+                  <input type="radio" class="producto__radio-input" name="tamaño" id="2,5" value="2,5" />
+                  <p class="producto__radio-texto">2,5</p>
+                </label>
+                <label for="3">
+                  <input type="radio" class="producto__radio-input" name="tamaño" id="3" value="3" />
+                  <p class="producto__radio-texto">3</p>
+                </label>
+                <label for="3,5">
+                  <input type="radio" class="producto__radio-input" name="tamaño" id="3,5" value="3,5" />
+                  <p class="producto__radio-texto">3,5</p>
+                </label>
+                <label for="4">
+                  <input type="radio" class="producto__radio-input" name="tamaño" id="4" value="4" />
+                  <p class="producto__radio-texto">4</p>
+                </label>
+              </div>
+            </div>
+            <div class="producto__contenedor-propiedad">
+              <p class="producto__propiedad">Amount</p>
+              <button class="producto__btn-cantidad" id="disminuir-cantidad">
+                <i class="bi bi-dash"></i>
+              </button>
+              <input type="text" id="cantidad" value="1" class="producto__cantidad" />
+              <button class="producto__btn-cantidad" id="incrementar-cantidad">
+                <i class="bi bi-plus"></i>
+              </button>
+            </div>
+            <button type="submit" class="producto__btn-carrito" id="agregar-al-carrito">Agregar al carrito</button>
+          </div>
+        </section>
       </main>
     </section>
 
