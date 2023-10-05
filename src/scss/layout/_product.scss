@@ -44,7 +44,7 @@
   }
 
   &__estrella {
-    color: v.$cyan;
+    color: v.$clr-red;
   }
 
   &__nombre {
@@ -112,7 +112,7 @@
       background: v.$clr-red;
     }
     &--blue::after {
-      background: #0a9396;
+      background: #072ac8;
     }
   }
 
