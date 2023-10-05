@@ -1,0 +1,51 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as mx;
+
+.header {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    color: v.$color-btn-hover;
+    font-style: italic;
+    font-size: 3.5rem;
+    margin-left: 4rem;
+    font-weight: 900;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__link {
+    color: #000;
+    font-weight: 600;
+    position: relative;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: 1s all ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 3px;
+      bottom: -0.5rem;
+      left: 0;
+      background-color: #000;
+      transform-origin: bottom right;
+      transition: transform 500ms ease-out;
+    }
+    &:hover {
+      transition: all 500ms;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
