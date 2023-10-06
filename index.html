@@ -226,7 +226,7 @@
             </div>
           </div>
           <div class="tab" id="envio">
-            <h3 class="tab__titulo">Envio</h3>
+            <h3 class="tab__titulo">Shipping</h3>
             <p class="tab__parrafo">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur hendrerit nunc, nec aliquet nisi consequat nec. Fusce porttitor non quam vitae
               venenatis. Sed maximus lacus at elit consequat, nec finibus nisl commodo. Vestibulum vitae urna quis nisi mollis elementum non ac sem.
@@ -240,6 +240,61 @@
         <!-- SECTION REVIEW -->
       </main>
     </section>
+    <!-- NOTIFICATION SECTION -->
+    <section class="notificacion" id="notificacion">
+      <p class="notificacion__titulo">Added to cart</p>
+      <img src="./img/thumbs/1.jpg" alt="" class="notificacion__thumb" />
+      <a href="#" class="notificacion__link" data-accion="abrir-carrito">View cart.</a>
+    </section>
+    <!-- NOTIFICATION SECTION -->
+
+    <!-- CART SECTION -->
+    <div class="carrito" id="carrito">
+      <div class="carrito__overlay">
+        <div class="carrito__contenedor">
+          <div class="carrito__header">
+            <h4 class="carrito__titulo">Cart</h4>
+            <button class="carrito__btn-cerrar" data-accion="cerrar-carrito">
+              <i class="bi bi-x"></i>
+            </button>
+          </div>
+          <div class="carrito__body">
+            <p class="carrito__aviso-sin-productos">There are no products in your cart.</p>
+            <!-- <div class="carrito__producto">
+							<div class="carrito__producto-info">
+								<img src="./img/tennis/1.jpg" alt="" class="carrito__thumb" />
+								<div>
+									<p class="carrito__producto-nombre">
+										<span class="carrito__producto-cantidad">1 x </span>Lorem Ipsum Dolot Asimmet
+									</p>
+									<p class="carrito__producto-propiedades">
+										Tamaño:<span>2,5</span> Color:<span>Rojo</span>
+									</p>
+								</div>
+							</div>
+							<div class="carrito__producto-contenedor-precio">
+								<button class="carrito__btn-eliminar-item" data-accion="eliminar-item-carrito">
+                  <i class="bi bi-x"></i>
+								</button>
+								<p class="carrito__producto-precio">$500.00</p>
+							</div>
+						</div> -->
+          </div>
+          <div class="carrito__footer">
+            <div class="carrito__contenedor-total">
+              <div>
+                <p class="carrito__label">Total:</p>
+                <p class="carrito__total">$0.00</p>
+              </div>
+              <button class="carrito__btn-comprar" id="carrito__btn-comprar">Buy</button>
+            </div>
+            <div class="carrito__contenedor-btn-regresar" data-accion="cerrar-carrito">
+              <button class="carrito__btn-regresar">Back to the Shop</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer></footer>
   </body>
