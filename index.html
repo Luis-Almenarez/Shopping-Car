@@ -11,6 +11,7 @@
   </head>
   <body>
     <section class="container">
+      <!-- SECTION HEADER -->
       <header class="header">
         <a class="header__logo" href="#">Shop Tech</a>
         <nav class="header__menu">
@@ -19,7 +20,10 @@
           <a href="#" class="header__link">My account</a>
         </nav>
       </header>
+      <!-- SECTION HEADER -->
+
       <main>
+        <!-- SECTION BREADCRUMBS -->
         <section class="breadcrumbs">
           <a href="/" class="breadcrumbs__link">Home</a>
           <div class="breadcrumbs__separador">
@@ -31,7 +35,9 @@
           </div>
           <p href="/" class="breadcrumbs__active">Sony Wireless</p>
         </section>
+        <!-- SECTION BREADCRUMBS -->
 
+        <!-- SECTION PRODUCT -->
         <section class="producto" id="producto" data-producto-id="1">
           <div class="producto__thumbs">
             <img src="./img/thumbs/black.jpg" alt="" class="producto__thumb-img" />
@@ -84,32 +90,24 @@
                 </label>
               </div>
             </div>
-            <div class="producto__contenedor-propiedad" id="propiedad-tamaño">
-              <p class="producto__propiedad">Capacity</p>
+            <div class="producto__contenedor-propiedad" id="propiedad-envio">
+              <p class="producto__propiedad">Shipping type</p>
               <div class="producto__contenedor-radios">
-                <label for="1,5">
-                  <input type="radio" class="producto__radio-input" name="tamaño" id="1,5" value="1,5" checked />
-                  <p class="producto__radio-texto">1,5</p>
+                <label for="standard">
+                  <input type="radio" class="producto__radio-input" name="envio" id="standard" value="standard" checked />
+                  <p class="producto__radio-texto">Standard</p>
                 </label>
-                <label for="2">
-                  <input type="radio" class="producto__radio-input" name="tamaño" id="2" value="2" />
-                  <p class="producto__radio-texto">2</p>
+                <label for="express">
+                  <input type="radio" class="producto__radio-input" name="envio" id="express" value="express" />
+                  <p class="producto__radio-texto">Express</p>
                 </label>
-                <label for="2,5">
-                  <input type="radio" class="producto__radio-input" name="tamaño" id="2,5" value="2,5" />
-                  <p class="producto__radio-texto">2,5</p>
+                <label for="inStore">
+                  <input type="radio" class="producto__radio-input" name="envio" id="inStore" value="inStore" />
+                  <p class="producto__radio-texto">In-Store</p>
                 </label>
-                <label for="3">
-                  <input type="radio" class="producto__radio-input" name="tamaño" id="3" value="3" />
-                  <p class="producto__radio-texto">3</p>
-                </label>
-                <label for="3,5">
-                  <input type="radio" class="producto__radio-input" name="tamaño" id="3,5" value="3,5" />
-                  <p class="producto__radio-texto">3,5</p>
-                </label>
-                <label for="4">
-                  <input type="radio" class="producto__radio-input" name="tamaño" id="4" value="4" />
-                  <p class="producto__radio-texto">4</p>
+                <label for="free">
+                  <input type="radio" class="producto__radio-input" name="envio" id="free" value="free" />
+                  <p class="producto__radio-texto">Free</p>
                 </label>
               </div>
             </div>
@@ -123,9 +121,123 @@
                 <i class="bi bi-plus"></i>
               </button>
             </div>
-            <button type="submit" class="producto__btn-carrito" id="agregar-al-carrito">Agregar al carrito</button>
+            <button type="submit" class="producto__btn-carrito" id="agregar-al-carrito">Add to cart</button>
           </div>
         </section>
+        <!-- SECTION PRODUCT -->
+
+        <!-- SECTION REVIEW -->
+        <section class="mas-informacion" id="mas-informacion">
+          <div class="tabs">
+            <button class="tabs__button tabs__button--active" data-tab="caracteristicas">Features</button>
+            <button class="tabs__button" data-tab="reseñas">Review</button>
+            <button class="tabs__button" data-tab="envio">Shipping</button>
+          </div>
+          <div class="tab tab--active" id="caracteristicas">
+            <h3 class="tab__titulo">Features</h3>
+            <ul class="tab__lista">
+              <li>Nunc ornare ex at diam fermentum scelerisque.</li>
+              <li>Integer vehicula nisl in sem faucibus, ac tincidunt magna dapibus.</li>
+              <li>Integer vel magna eget ipsum laoreet lobortis.</li>
+              <li>Phasellus viverra dui ut lorem tempus eleifend.</li>
+              <li>Maecenas dictum lacus et condimentum aliquam.</li>
+            </ul>
+          </div>
+          <div class="tab" id="reseñas">
+            <h3 class="tab__titulo">Reseñas</h3>
+            <div class="reseña">
+              <img src="./img/users/1.jpg" class="reseña__foto" alt="" />
+              <div class="reseña__info">
+                <div class="reseña__estrellas">
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <p class="reseña__fecha">31 de Mayo de 2022</p>
+                <p class="reseña__texto">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sed nunc dapibus, fringilla felis nec, consequat ipsum. Maecenas aliquam metus neque, a
+                  lobortis justo suscipit eu. Quisque sit amet orci at tortor fermentum suscipit bibendum in libero. Duis rhoncus massa blandit nunc gravida, at euismod augue
+                  congue.
+                </p>
+              </div>
+            </div>
+            <div class="reseña">
+              <img src="./img/users/2.jpg" alt="" class="reseña__foto" />
+              <div class="reseña__info">
+                <div class="reseña__estrellas">
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <p class="reseña__fecha">31 de Mayo de 2022</p>
+                <p class="reseña__texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+            <div class="reseña">
+              <img src="./img/users/3.jpg" alt="" class="reseña__foto" />
+              <div class="reseña__info">
+                <div class="reseña__estrellas">
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="reseña__estrella">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                </div>
+                <p class="reseña__fecha">31 de Mayo de 2022</p>
+                <p class="reseña__texto">
+                  Integer vel nisi massa. Pellentesque ligula nulla, pretium hendrerit massa quis, tempus consequat lectus. Nulla facilisi. Etiam ipsum felis, euismod eget volutpat
+                  tristique, consequat at lorem.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="tab" id="envio">
+            <h3 class="tab__titulo">Envio</h3>
+            <p class="tab__parrafo">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consectetur hendrerit nunc, nec aliquet nisi consequat nec. Fusce porttitor non quam vitae
+              venenatis. Sed maximus lacus at elit consequat, nec finibus nisl commodo. Vestibulum vitae urna quis nisi mollis elementum non ac sem.
+            </p>
+            <p class="tab__parrafo">
+              Proin ut tristique est. Curabitur volutpat mi quam, et tristique ipsum dignissim ut. Nam bibendum feugiat turpis sit amet auctor. Cras efficitur ullamcorper ligula.
+              Sed nec tellus odio. Cras eget fermentum odio. Maecenas molestie nulla lorem, a pulvinar risus malesuada et.
+            </p>
+          </div>
+        </section>
+        <!-- SECTION REVIEW -->
       </main>
     </section>
 
