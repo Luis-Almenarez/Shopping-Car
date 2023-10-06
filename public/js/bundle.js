@@ -1,2 +1,2 @@
-"use strict";
+"use strict";const t=document.getElementById("producto"),e=document.querySelector(".producto__imagen"),r=document.querySelector(".producto__thumbs"),c=t.querySelector("#propiedad-color");r.addEventListener("click",(t=>{if("IMG"===t.target.tagName){const r=t.target.src,c=r.lastIndexOf("/"),o=r.substring(c+1);e.src=`./img/products/${o}`}})),c.addEventListener("click",(t=>{if("INPUT"===t.target.tagName){const r=t.target.value;e.src=`./img/products/${r}.jpg`;document.querySelectorAll(".producto__thumb-img").forEach(((t,e)=>{t.src=`./img/thumbs/${r}/${r}${e+1}.jpg`}))}}));
 //# sourceMappingURL=bundle.js.map
