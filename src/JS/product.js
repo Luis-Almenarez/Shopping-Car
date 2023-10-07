@@ -1,6 +1,12 @@
 const product = document.getElementById("producto");
 const productImage = document.querySelector(".producto__imagen");
 const thumbs = document.querySelector(".producto__thumbs");
+/*BOTONTES CANTIDAD*/
+const btnPlus = document.querySelector("#incrementar-cantidad");
+const btnMinus = document.querySelector("#disminuir-cantidad");
+let inputQuantity = document.querySelector("#cantidad");
+/*BOTONTES CANTIDAD*/
+
 /* COLOR */
 const colorSelected = product.querySelector("#propiedad-color");
 
@@ -22,6 +28,7 @@ thumbs.addEventListener("click", (e) => {
   }
 });
 
+// Con esta función actualizo la miniatura del color que se haya seleccionado
 colorSelected.addEventListener("click", (e) => {
   if (e.target.tagName === "INPUT") {
     const color = e.target.value;
@@ -32,5 +39,18 @@ colorSelected.addEventListener("click", (e) => {
     thumbnails.forEach((thumbnail, index) => {
       thumbnail.src = `./img/thumbs/${color}/${color}${index + 1}.jpg`;
     });
+  }
+});
+
+// Con esta función incremento en 1 el valor del input siempre que se haga click
+btnPlus.addEventListener("click", (e) => {
+  inputQuantity.value = parseInt(inputQuantity.value) + 1;
+});
+
+// Con esta función disminuyo en 1 el valor del input siempre que se haga click
+btnMinus.addEventListener("click", (e) => {
+  inputQuantity.value = parseInt(inputQuantity.value) - 1;
+  if (parseInt(inputQuantity.value) <= 1) {
+    inputQuantity.value = 1;
   }
 });
