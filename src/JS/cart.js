@@ -9,6 +9,10 @@ const windowCart = document.getElementById("carrito");
 const addCart = document.getElementById("agregar-al-carrito");
 // Obtiene el contenedor de todo el producto
 const product = document.getElementById("producto");
+
+// Se crea una instancia de Intl.NumberFormat para formatear valores como moneda en inglés estadounidense
+const formatMoney = new Intl.NumberFormat("EN-EEUU", { style: "currency", currency: "USD" });
+
 // Generamos una variable la cual tendrá la cantidad de productos que el usuario agregue
 let cartProduct = [];
 
@@ -20,6 +24,8 @@ const renderCart = () => {
   // Eliminamos los productos que hay contenidos en el carrito para que no los duplique si se vuelve a abrir
   const productsInCart = windowCart.querySelectorAll(".carrito__producto");
   productsInCart.forEach((product) => product.remove());
+
+  let total = 0;
 
   //Si no existen productos en el carrito agregamos la clase 'carrito--vacio' de lo contrario mostramos los productos que en él hay.
   if (cartProduct.length < 1) {
@@ -34,6 +40,8 @@ const renderCart = () => {
       productsData.products.forEach((productDataBase) => {
         if (productDataBase.id === cartProduct.id) {
           cartProduct.price = productDataBase.price;
+
+          total += productDataBase.price * cartProduct.quantity;
         }
       });
 
@@ -80,6 +88,8 @@ const renderCart = () => {
       windowCart.querySelector(".carrito__body").appendChild(itemCart);
     });
   }
+
+  windowCart.querySelector(".carrito__total").innerText = formatMoney.format(total);
 };
 
 // Carga los productos del carrito desde localStorage si existen
