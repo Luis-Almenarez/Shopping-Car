@@ -1,5 +1,6 @@
 import terser from "@rollup/plugin-terser";
 import sourcemaps from "rollup-plugin-sourcemaps";
+import json from "@rollup/plugin-json";
 export default {
   input: "src/JS/app.js",
   output: {
@@ -7,5 +8,5 @@ export default {
     format: "cjs",
     sourcemap: true,
   },
-  plugins: [terser(), sourcemaps()],
+  plugins: [terser(), sourcemaps(), json()],
 };

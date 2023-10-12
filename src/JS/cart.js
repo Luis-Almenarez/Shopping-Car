@@ -1,4 +1,4 @@
-import productsData from "./Data/products";
+import productsData from "./Data/products.json";
 // Selecciona los botones de abrir el carrito por su atributo 'data-accion'.
 const btnOpenCart = document.querySelectorAll('[data-accion="abrir-carrito"]');
 // Selecciona los botones de cerrar el carrito por su atributo 'data-accion'.
@@ -97,12 +97,50 @@ addCart.addEventListener("click", (e) => {
   let quantity = parseInt(product.querySelector("#cantidad").value); // Obtiene la cantidad del producto como un número entero.
   let color = product.querySelector("#propiedad-color input:checked").value; // Obtiene el color seleccionado del producto.
   let ShippingType = product.querySelector("#propiedad-envio input:checked").value; // Obtiene el tipo de envío seleccionado para el producto.
-  // Agrega los datos recopilados como un nuevo objeto al array "cartProduct".
-  cartProduct.push({
-    id: id,
-    name: name,
-    quantity: quantity,
-    color: color,
-    ShippingType: ShippingType,
-  });
+
+  if (cartProduct.length > 0) {
+    let productInCart = false;
+    cartProduct.forEach((item) => {
+      if (item.id === id && item.name === name && item.color === color && item.ShippingType === ShippingType) {
+        item.quantity += quantity;
+        productInCart = true;
+      }
+    });
+    if (!productInCart) {
+      // Agrega los datos recopilados como un nuevo objeto al array "cartProduct".
+      cartProduct.push({
+        id: id,
+        name: name,
+        quantity: quantity,
+        color: color,
+        ShippingType: ShippingType,
+      });
+    }
+  } else {
+    // Agrega los datos recopilados como un nuevo objeto al array "cartProduct".
+    cartProduct.push({
+      id: id,
+      name: name,
+      quantity: quantity,
+      color: color,
+      ShippingType: ShippingType,
+    });
+  }
+});
+
+// Eliminar productos
+
+windowCart.addEventListener("click", (e) => {
+  if (e.target.closest("button")?.dataset.accion === "eliminar-item-carrito") {
+    let myProduct = e.target.closest(".carrito__producto");
+    let productIndex = [...windowCart.querySelectorAll(".carrito__producto")].indexOf(myProduct);
+
+    cartProduct = cartProduct.filter((item, index) => {
+      if (index !== productIndex) {
+        return item;
+      }
+    });
+
+    renderCart();
+  }
 });
