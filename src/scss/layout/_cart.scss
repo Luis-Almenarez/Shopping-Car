@@ -182,8 +182,13 @@
     border: none;
     cursor: pointer;
     font-family: "Rubik", sans-serif;
-    transition: 0.2s ease all;
+    transition: all 500ms;
     border-radius: 0.5rem;
+
+    &:hover {
+      background-color: v.$clr-red;
+      color: v.$color-btn;
+    }
   }
 
   &__label {

@@ -21,27 +21,33 @@ const renderCart = () => {
   const productsInCart = windowCart.querySelectorAll(".carrito__producto");
   productsInCart.forEach((product) => product.remove());
 
-  // Itera a través de cada producto en el array "cartProduct".
-  cartProduct.forEach((cartProduct) => {
-    /* Se obtiene el precio del archivo products.js
+  //Si no existen productos en el carrito agregamos la clase 'carrito--vacio' de lo contrario mostramos los productos que en él hay.
+  if (cartProduct.length < 1) {
+    windowCart.classList.add("carrito--vacio");
+  } else {
+    //En caso de que haya un producto eliminamos la clase 'carrito--vacio' y mostramos lo que haya dentro
+    windowCart.classList.remove("carrito--vacio");
+    // Itera a través de cada producto en el array "cartProduct".
+    cartProduct.forEach((cartProduct) => {
+      /* Se obtiene el precio del archivo products.js
      siempre y cuando el id del item coincide con el que está en products.js */
-    productsData.products.forEach((productDataBase) => {
-      if (productDataBase.id === cartProduct.id) {
-        cartProduct.price = productDataBase.price;
-      }
-    });
+      productsData.products.forEach((productDataBase) => {
+        if (productDataBase.id === cartProduct.id) {
+          cartProduct.price = productDataBase.price;
+        }
+      });
 
-    // Establece la ruta de la imagen que se quiere mostrar dependiendo de la decisión del usuario
-    let thumbSrc = product.querySelectorAll(".producto__thumb-img")[0].src;
-    if (cartProduct.color === "silver") {
-      thumbSrc = "./img/thumbs/silver/silver.jpg";
-    } else if (cartProduct.color === "blue") {
-      thumbSrc = "./img/thumbs/blue/blue.jpg";
-    } else if (cartProduct.color === "black") {
-      thumbSrc = "./img/thumbs/black/black.jpg";
-    }
-    // Genera una plantilla HTML para representar el producto en el carrito.
-    let templateProduct = `
+      // Establece la ruta de la imagen que se quiere mostrar dependiendo de la decisión del usuario
+      let thumbSrc = product.querySelectorAll(".producto__thumb-img")[0].src;
+      if (cartProduct.color === "silver") {
+        thumbSrc = "./img/thumbs/silver/silver.jpg";
+      } else if (cartProduct.color === "blue") {
+        thumbSrc = "./img/thumbs/blue/blue.jpg";
+      } else if (cartProduct.color === "black") {
+        thumbSrc = "./img/thumbs/black/black.jpg";
+      }
+      // Genera una plantilla HTML para representar el producto en el carrito.
+      let templateProduct = `
       <div class="carrito__producto-info">
         <img src="${thumbSrc}" alt="" class="carrito__thumb" />
         <div>
@@ -61,19 +67,29 @@ const renderCart = () => {
       </div>
     `;
 
-    // Crea un nuevo elemento div para el producto en el carrito.
-    let itemCart = document.createElement("div");
+      // Crea un nuevo elemento div para el producto en el carrito.
+      let itemCart = document.createElement("div");
 
-    // Agrega la clase "carrito__producto" al elemento div creado.
-    itemCart.classList.add("carrito__producto");
+      // Agrega la clase "carrito__producto" al elemento div creado.
+      itemCart.classList.add("carrito__producto");
 
-    // Asigna la plantilla HTML como contenido del elemento div.
-    itemCart.innerHTML = templateProduct;
+      // Asigna la plantilla HTML como contenido del elemento div.
+      itemCart.innerHTML = templateProduct;
 
-    // Agrega el elemento del producto al cuerpo del carrito.
-    windowCart.querySelector(".carrito__body").appendChild(itemCart);
-  });
+      // Agrega el elemento del producto al cuerpo del carrito.
+      windowCart.querySelector(".carrito__body").appendChild(itemCart);
+    });
+  }
 };
+
+// Carga los productos del carrito desde localStorage si existen
+const storedCartProduct = localStorage.getItem("cartProduct");
+if (storedCartProduct) {
+  cartProduct = JSON.parse(storedCartProduct);
+  if (cartProduct.length >= 1) {
+    renderCart(); // Actualiza el carrito para mostrar los productos recuperados
+  }
+}
 
 // Abrir carrito.
 btnOpenCart.forEach((btn) => {
@@ -126,21 +142,31 @@ addCart.addEventListener("click", (e) => {
       ShippingType: ShippingType,
     });
   }
+
+  // Guarda cartProduct en localStorage
+  localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
 });
 
-// Eliminar productos
-
+/*Esta función gestiona los eventos de clic en el carrito de compras.
+  Permite eliminar productos del carrito haciendo clic en el botón de eliminar. */
 windowCart.addEventListener("click", (e) => {
   if (e.target.closest("button")?.dataset.accion === "eliminar-item-carrito") {
+    // Obtiene el elemento del producto que se va a eliminar.
     let myProduct = e.target.closest(".carrito__producto");
+    // Encuentra el índice del producto en el carrito.
     let productIndex = [...windowCart.querySelectorAll(".carrito__producto")].indexOf(myProduct);
 
+    // Filtra el producto eliminado del array 'cartProduct'.
     cartProduct = cartProduct.filter((item, index) => {
       if (index !== productIndex) {
         return item;
       }
     });
 
+    // Actualiza el localStorage para reflejar los cambios.
+    localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
+
+    // Vuelve a renderizar el carrito para reflejar los cambios.
     renderCart();
   }
 });
