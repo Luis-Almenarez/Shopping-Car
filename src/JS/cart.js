@@ -9,6 +9,7 @@ const windowCart = document.getElementById("carrito");
 const addCart = document.getElementById("agregar-al-carrito");
 // Obtiene el contenedor de todo el producto
 const product = document.getElementById("producto");
+const cartNotification = document.getElementById("notificacion");
 
 // Se crea una instancia de Intl.NumberFormat para formatear valores como moneda en inglés estadounidense
 const formatMoney = new Intl.NumberFormat("EN-EEUU", { style: "currency", currency: "USD" });
@@ -152,6 +153,23 @@ addCart.addEventListener("click", (e) => {
       ShippingType: ShippingType,
     });
   }
+
+  //Establecemos la ruta de la imagen que se motrará cuando se preione agregar al carrito
+  let srcThumb = product.querySelectorAll(".producto__thumb-img")[0].src;
+  if (color === "silver") {
+    srcThumb = "./img/thumbs/silver/silver.jpg";
+  } else if (color === "blue") {
+    srcThumb = "./img/thumbs/blue/blue.jpg";
+  }
+  cartNotification.querySelector("img").src = srcThumb;
+
+  // Agrega la clase active para que se muestre la notificación de agregado al carrito
+  cartNotification.classList.add("notificacion--active");
+
+  // Oculta la notificación después de que hayan pasado 3 segundos
+  setTimeout(() => {
+    cartNotification.classList.remove("notificacion--active");
+  }, 3000);
 
   // Guarda cartProduct en localStorage
   localStorage.setItem("cartProduct", JSON.stringify(cartProduct));
