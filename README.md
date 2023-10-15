@@ -1,6 +1,6 @@
 # Shopping-Cart
 
-Carrito de compras realizado con HTML, SCSS y JS, se utilizó metodología BEM y modularización.
+Carrito de compras realizado con HTML, SCSS y JS, se utilizó metodología BEM y modularización con SASS y JS.
 
 ## Tecnologías Utilizadas
 
