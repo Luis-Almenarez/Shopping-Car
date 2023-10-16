@@ -198,3 +198,24 @@ windowCart.addEventListener("click", (e) => {
     renderCart();
   }
 });
+
+// Genera la animación del carrito de compras al hacer click en el botón 'BUY'
+//Se utiliza la librería SweetAlert2
+windowCart.querySelector("#carrito__btn-comprar").addEventListener("click", () => {
+  Swal.fire({
+    title: "Do you want to purchase what's in the cart?",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "YES",
+    denyButtonText: `Continue shopping`,
+    customClass: {
+      popup: "large-swal",
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire("Successful purchase completed.", "", "success");
+    } else if (result.isDenied) {
+      Swal.fire("Changes are not saved", "", "info");
+    }
+  });
+});
