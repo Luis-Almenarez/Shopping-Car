@@ -1,4 +1,5 @@
 @use "../base/variables" as v;
+@use "../base/mixins" as mx;
 
 .tabs {
   display: flex;
@@ -14,6 +15,10 @@
     font-family: v.$secundary-font;
     border-radius: 0.5rem;
     padding: 1rem 2rem;
+
+    @include mx.tablet {
+      font-size: 1.2rem;
+    }
   }
 
   &__button--active {
@@ -30,6 +35,10 @@
   margin-bottom: 2rem;
   display: none;
 
+  @include mx.tablet {
+    font-size: 1.2rem;
+  }
+
   &--active {
     display: block;
   }
@@ -38,6 +47,9 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    @include mx.tablet {
+      font-size: 2rem;
+    }
   }
 
   &__parrafo {
