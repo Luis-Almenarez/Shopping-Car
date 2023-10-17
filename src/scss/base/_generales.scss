@@ -1,49 +1,5 @@
 @use "variables" as v;
 
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%; /* 1 rem = 10px */
-}
-
-body {
-  background: v.$color-fondo;
-  font-family: v.$principal-font;
-  font-size: 1.5rem;
-}
-
-a {
-  list-style: none;
-  text-decoration: none;
-}
-
-img {
-  width: 100%;
-}
-
-.container {
-  width: 95%;
-  max-width: 1050px;
-  margin: auto;
-}
-
-/* CSS personalizado para hacer que la alerta de SweetAlert2 sea más grande */
-.large-swal {
-  font-size: 1.6rem; /* Tamaño de fuente más grande */
-}
-
-/* CSS personalizado para hacer que la animación de confirmación sea más grande */
-.swal2-popup {
-  font-size: 1.5rem; /* Tamaño de fuente más grande */
-}
-
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -394,4 +350,48 @@ template {
 
 [hidden] {
   display: none;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10px */
+}
+
+body {
+  background: v.$color-fondo;
+  font-family: v.$principal-font;
+  font-size: 1.5rem;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 95%;
+  max-width: 1050px;
+  margin: auto;
+}
+
+/* CSS personalizado para hacer que la alerta de SweetAlert2 sea más grande */
+.large-swal {
+  font-size: 1.6rem; /* Tamaño de fuente más grande */
+}
+
+/* CSS personalizado para hacer que la animación de confirmación sea más grande */
+.swal2-popup {
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
 }

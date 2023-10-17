@@ -14,28 +14,30 @@
   @include mx.dekstopSM {
     padding: 1rem;
     place-items: center;
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
     grid-template-rows: 10% 1fr 1fr;
     gap: 0;
   }
+
   &__thumbs {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 3rem;
 
     @include mx.dekstopSM {
-      flex-direction: row;
+      display: grid;
+      grid-auto-flow: column;
+      width: 100%;
       padding: 2rem;
+      gap: 1rem;
     }
   }
 
   &__thumb-img {
-    width: 6.5rem;
     cursor: pointer;
     border-radius: 0.5rem;
-    width: 100%;
-    vertical-align: top;
   }
 
   &__contenedor-imagen {
