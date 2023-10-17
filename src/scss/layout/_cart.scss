@@ -20,14 +20,10 @@
   }
 
   &__contenedor {
-    margin-top: 4rem;
+    margin-top: 5rem;
     border-radius: 1rem;
     width: 90%;
     max-width: 55rem;
-
-    @include mx.tablet {
-      margin-top: 20rem;
-    }
   }
 
   &__header {
@@ -70,6 +66,11 @@
     gap: 2rem;
     max-height: 50vh;
     overflow-y: scroll;
+
+    @include mx.phone {
+      padding: 1rem;
+      gap: 1rem;
+    }
   }
 
   &__aviso-sin-productos {
@@ -91,18 +92,28 @@
     gap: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid v.$color-blanco-secundario;
+
+    @include mx.phone {
+      font-size: 1.2rem;
+    }
   }
 
   &__producto-info {
     display: flex;
     gap: 2rem;
     align-items: center;
+    @include mx.phone {
+      gap: 1rem;
+    }
   }
 
   &__thumb {
     width: 6.5rem;
     border-radius: 0.5rem;
     vertical-align: top;
+    @include mx.phone {
+      width: 4rem;
+    }
   }
 
   &__producto-nombre {
@@ -120,6 +131,11 @@
     color: v.$color-muted;
     font-size: 1.5rem;
     text-transform: capitalize;
+
+    @include mx.phone {
+      font-size: 1.2rem;
+      gap: 0.3rem;
+    }
   }
 
   &__producto-contenedor-precio {
@@ -150,6 +166,10 @@
 
   &__producto-precio {
     font-size: 1.5rem;
+
+    @include mx.phone {
+      font-size: 1.2rem;
+    }
   }
 
   &__footer {
